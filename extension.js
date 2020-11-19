@@ -29,7 +29,8 @@ function enable() {
 }
 
 function disable() {
-  Main.panel._rightBox.remove_child(toogleXpad);
+  toogleXpad.destroy();
+  toggleXpad = null;
 }
 
 function handle() {
