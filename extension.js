@@ -3,12 +3,12 @@ const Main = imports.ui.main;
 const Util = imports.misc.util;
 const Shell = imports.gi.Shell;
 
-let toogleXpad;
+let toggleXpad;
 
 function init(extensionMeta) {}
 
 function enable() {
-  toogleXpad = new St.Bin({
+  toggleXpad = new St.Bin({
     style_class: "panel-button",
     reactive: true,
     can_focus: true,
@@ -22,14 +22,14 @@ function enable() {
     style_class: "system-status-icon",
   });
 
-  toogleXpad.set_child(icon);
-  toogleXpad.connect("button-press-event", handle);
+  toggleXpad.set_child(icon);
+  toggleXpad.connect("button-press-event", handle);
 
-  Main.panel._rightBox.insert_child_at_index(toogleXpad, 0);
+  Main.panel._rightBox.insert_child_at_index(toggleXpad, 0);
 }
 
 function disable() {
-  toogleXpad.destroy();
+  toggleXpad.destroy();
   toggleXpad = null;
 }
 
